@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAME LIST</title>
+  <style>
+    body {
+      background-color: #000;
+      color: crimson;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: 1px solid crimson;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      background-color: #000;
+      color: crimson;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      z-index: 1000;
+    }
+    main {
+      margin-top: 80px;
+      max-width: 800px;
+      width: 90%;
+      padding: 20px;
+      color: #fff;
+    }
+    /* Пример стилей контента */
+    .content-block {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px crimson;
+    }
+  </style>
+</head>
+<body>
+
+  <header>FAME LIST</header>
+
+  <main>
+    <div class="content-block">
+      <p>Здесь можно разместить список известных личностей, рейтинг феймов и другую полезную информацию.</p>
+      <p>Пример:</p>
+      <ul>
+        <li>Имя 1 — Описание или статус</li>
+        <li>Имя 2 — Описание или статус</li>
+        <li>Имя 3 — Описание или статус</li>
+      </ul>
+    </div>
+  </main>
+
+</body>
+</html>
+      
