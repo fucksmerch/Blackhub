@@ -4,93 +4,66 @@
   <meta charset="UTF-8" />
   <title>BlackHub</title>
   <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #000;
-      padding: 20px;
+      position: fixed; top: 0; left: 0; width: 100%;
+      background-color: #000; padding: 20px;
       border-bottom: 1px solid crimson;
+      display: flex; align-items: center; justify-content: center;
       z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
     }
     .menu-icon {
-      position: absolute;
-      left: 20px;
-      font-size: 26px;
+      position: absolute; left: 20px;
+      font-size: 26px; color: white;
+      cursor: pointer; user-select: none;
+    }
+    header h1 { margin: 0; font-size: 28px; color: crimson; letter-spacing: 2px; }
+
+    /* Бургер-меню */
+    .sidebar {
+      position: fixed; top: 0; left: -250px;
+      width: 250px; height: 100%;
+      background-color: rgba(0,0,0,0.95);
+      padding: 100px 20px 20px;
+      box-shadow: 2px 0 5px rgba(255,255,255,0.1);
+      transition: left 0.3s ease-in-out;
+      z-index: 999;
+    }
+    .sidebar.open { left: 0; }
+    .sidebar a {
+      display: block;
+      background: crimson;
       color: white;
-      cursor: pointer;
-      user-select: none;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      color: crimson;
-      letter-spacing: 2px;
-    }
-.sidebar a {
-  display: block;
-  background: crimson;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  text-align: center;
-  transition: background 0.3s;
-}
-
-.sidebar a:hover {
-  background: darkred;
-}
-    .sidebar.open {
-      left: 0;
-    .content {
-      padding-top: 100px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
       text-align: center;
+      transition: background 0.3s;
     }
-    .buttons {
-      margin: 60px auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .btn {
-  background: crimson;
-  padding: 14px 28px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s;
-  font-size: 18px;
-  display: inline-block;
-}
+    .sidebar a:hover { background: darkred; }
 
-.btn:hover {
-  background: #b30000;
-}
+    /* Главные кнопки на экране */
+    .buttons .btn {
+      background: crimson;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 8px;
+      margin: 10px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .buttons .btn:hover { background: #b30000; }
+
+    .content { padding-top: 100px; text-align: center; }
     .description {
-      text-align: center;
-      font-size: 12px;
-      color: #777;
-      padding: 60px 20px 30px;
-      max-width: 600px;
-      margin: 0 auto;
+      text-align: center; font-size: 12px; color: #777;
+      padding: 60px 20px 30px; max-width: 600px; margin: 0 auto;
     }
   </style>
 </head>
@@ -117,13 +90,12 @@
   </div>
 
   <div class="description">
-    Кровь на никнеймах — правда в одном клике. Здесь ты найдёшь аккаунты медийных личностей, факты, слитую инфу и компромат. 🔥 Форум — для тех, кто не боится говорить открыто. 🕵️ Делись, общайся, раскрывай.
+    Кровь на никнеймах — правда в одном клике…
   </div>
 
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
+      document.getElementById('sidebar').classList.toggle('open');
     }
   </script>
 
