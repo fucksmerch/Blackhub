@@ -72,66 +72,50 @@
       background: darkred;
     }
 
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 30px;
-    padding: 120px 20px 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 120px 20px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
 
-  .card {
-    background-color: #111;
-    border: 1px solid crimson;
-    border-radius: 12px;
-    box-shadow: 0 0 10px crimson;
-    text-align: center;
-    overflow: hidden;
-  }
+    .card {
+      background-color: #111;
+      border: 1px solid crimson;
+      border-radius: 12px;
+      box-shadow: 0 0 10px crimson;
+      text-align: center;
+      overflow: hidden;
+    }
 
-  .card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-  }
+    .card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
 
-  .rank {
-    font-size: 18px;
-    font-weight: bold;
-    color: crimson;
-    margin-top: 10px;
-  }
+    .rank {
+      font-size: 18px;
+      font-weight: bold;
+      color: crimson;
+      margin-top: 10px;
+    }
 
-  .username {
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 10px;
-  }
+    .username {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
 
-  .bio {
-    font-size: 14px;
-    color: #ccc;
-    padding: 0 10px 15px;
-    line-height: 1.5;
-    text-align: left;
-  }
-
-    @media (max-width: 950px) {
-  .card {
-    width: 45%;
-  }
-}
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
-  }
-}
-    
-      .card {
-        width: 90%;
-      }
+    .bio {
+      font-size: 14px;
+      color: #ccc;
+      padding: 0 10px 15px;
+      line-height: 1.5;
+      text-align: left;
     }
   </style>
 </head>
@@ -147,14 +131,15 @@
 
   <header>FAME KING'S</header>
 
-  <div class="card">
-  <img src="https://i.postimg.cc/bvYdrr73/IMG-20250704-094750-712.jpg" alt="Киллнет">
-  <div class="rank">Медийка</div>
-  <div class="username">@CTRAX_KILLNETA</div>
-  <div class="bio">
-    Один из самых популярных и уважаемых неймов в телеграм-сцене, часто ассоциируется с KillNet, фейм-доксингом, оформлением, медийкой и жесткими сливами. В сцене его считают "лицом" жесткого направления и профессионального подхода.
-  </div>
-</div>
+  <div class="container">
+    <div class="card">
+      <img src="https://i.postimg.cc/bvYdrr73/IMG-20250704-094750-712.jpg" alt="Киллнет">
+      <div class="rank">Медийка</div>
+      <div class="username">@CTRAX_KILLNETA</div>
+      <div class="bio">
+        Один из самых популярных и уважаемых неймов в телеграм-сцене, часто ассоциируется с KillNet, фейм-доксингом, оформлением, медийкой и жесткими сливами. В сцене его считают "лицом" жесткого направления и профессионального подхода.
+      </div>
+    </div>
 
     <div class="card">
       <img src="https://i.postimg.cc/Dz3dMrbm/IMG-20250704-095110-068.jpg" alt="Мефи">
@@ -162,6 +147,7 @@
       <div class="username">@belarusmefi</div>
       <div class="bio">
         Один из самых узнаваемых и резонансных неймов телеграм-сцены. Часто ассоциируется с фейм-доксингом, медийкой, конфликтами и агрессивной подачей. Отличается провокационным стилем, дерзкими сливами и активным участием в сцене. В комьюнити считается символом уличного влияния и вызывающей репутации.
+      </div>
     </div>
   </div>
 
