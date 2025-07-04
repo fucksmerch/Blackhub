@@ -4,21 +4,71 @@
   <meta charset="UTF-8" />
   <title>FAME KING'S — BlackHub</title>
   <style>
-    body {
-      background: #000;
-      color: white;
-      font-family: Arial, sans-serif;
+    body, html {
       margin: 0;
       padding: 0;
+      background: #000;
+      color: crimson;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
 
     header {
+      position: fixed;
+      top: 0;
+      width: 100%;
       text-align: center;
-      padding: 40px 20px 20px;
-      font-size: 48px;
-      color: crimson;
+      padding: 20px 0;
+      border-bottom: 1px solid crimson;
+      background: #000;
+      z-index: 1000;
+      font-size: 42px;
       font-weight: bold;
       letter-spacing: 2px;
+    }
+
+    .menu-icon {
+      position: fixed;
+      top: 25px;
+      left: 20px;
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      padding: 60px 20px;
+      transition: left 0.3s;
+      z-index: 999;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      background: crimson;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: darkred;
     }
 
     .container {
@@ -26,7 +76,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 40px;
-      padding: 20px;
+      padding: 120px 20px 20px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -82,6 +132,14 @@
 </head>
 <body>
 
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">ᴄᴀйᴛ</a>
+    <a href="famelist.html">𝙵𝚎𝚢𝚖 𝚕𝚒𝚜𝚝</a>
+    <a href="#">ɸоᴩуʍ</a>
+  </div>
+
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+
   <header>FAME KING'S</header>
 
   <div class="container">
@@ -101,6 +159,12 @@
   <div class="description">
     Среди всех феймов, самые сильные — это <b>Киллнет</b> и <b>Мефи</b>. Их уважают за силу, стиль и влияние. Они оставили след в комьюнити и задали стандарт, которому стремятся остальные.
   </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
