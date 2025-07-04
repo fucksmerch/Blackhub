@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <title>BlackHub</title>
   <style>
+    body {
+  overflow-x: hidden; /* убирает боковой скролл и обрезки */
+    }
     body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
     header {
       position: fixed; top: 0; left: 0; width: 100%;
@@ -21,14 +24,17 @@
 
     /* Бургер-меню */
     .sidebar {
-      position: fixed; top: 0; left: -250px;
-      width: 250px; height: 100%;
-      background-color: rgba(0,0,0,0.95);
-      padding: 100px 20px 20px;
-      box-shadow: 2px 0 5px rgba(255,255,255,0.1);
-      transition: left 0.3s ease-in-out;
-      z-index: 999;
-    }
+  position: fixed;
+  top: 0;
+  left: -100%; /* полностью за границу экрана */
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  padding: 100px 20px 20px;
+  box-shadow: 2px 0 5px rgba(255,255,255,0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+}
     .sidebar.open { left: 0; }
     .sidebar a {
       display: block;
