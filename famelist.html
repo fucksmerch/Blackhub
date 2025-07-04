@@ -56,52 +56,53 @@
       margin: 20px 0;
     }
     main {
-      margin: 90px auto 40px;
-      max-width: 840px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-    .fame-card {
-      flex: 0 0 calc(33.333% - 13.333px);
-      background: #111;
-      border: 1px solid crimson;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 0 10px crimson;
-    }
-    .fame-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-    .fame-card .rank {
-      margin: 10px 0 5px;
-      font-size: 16px;
-      color: crimson;
-    }
-    .fame-card .username {
-      margin-bottom: 15px;
-      font-size: 14px;
-      color: #fff;
-      padding: 0 10px;
-      word-break: break-word;
-    }
+  margin-top: 90px;
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.fame-card {
+  background-color: #111;
+  border: 1px solid crimson;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 10px crimson;
+}
+
+.fame-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.rank {
+  font-size: 18px;
+  font-weight: bold;
+  color: crimson;
+  margin: 10px 0 5px;
+}
+
+.username {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 15px;
+}
     @media (max-width: 768px) {
-      .fame-card {
-        flex: 0 0 calc(50% - 10px);
-      }
-    }
-    @media (max-width: 480px) {
-      .fame-card {
-        flex: 0 0 100%;
-      }
-    }
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 
   <main>
