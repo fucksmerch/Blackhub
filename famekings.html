@@ -111,12 +111,15 @@
     }
 
     .bio {
-      font-size: 14px;
-      color: #ccc;
-      padding: 0 10px 15px;
-      line-height: 1.5;
-      text-align: left;
-    }
+  font-size: 12px; /* было 14px */
+  color: #ccc;
+  padding: 0 10px 15px;
+  line-height: 1.4;
+  text-align: left;
+  max-height: 90px;          /* ограничение по высоте */
+  overflow: hidden;          /* скрыть лишний текст */
+  text-overflow: ellipsis;   /* троеточие в конце */
+}
   </style>
 </head>
 <body>
