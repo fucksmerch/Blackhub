@@ -29,19 +29,41 @@
       z-index: 1000;
     }
     main {
-      margin-top: 80px;
-      max-width: 800px;
+      margin-top: 90px;
+      max-width: 900px;
       width: 90%;
       padding: 20px;
-      color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
     }
-    /* Пример стилей контента */
-    .content-block {
+    .fame-card {
       background-color: #111;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px crimson;
+      border: 1px solid crimson;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 0 15px crimson;
+    }
+    .fame-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      height: 200px;
+    }
+    .rank {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: crimson;
+    }
+    .username {
+      font-size: 14px;
+      color: #fff;
+      word-break: break-word;
     }
   </style>
 </head>
@@ -50,17 +72,23 @@
   <header>FAME LIST</header>
 
   <main>
-    <div class="content-block">
-      <p>Здесь можно разместить список известных личностей, рейтинг феймов и другую полезную информацию.</p>
-      <p>Пример:</p>
-      <ul>
-        <li>Имя 1 — Описание или статус</li>
-        <li>Имя 2 — Описание или статус</li>
-        <li>Имя 3 — Описание или статус</li>
-      </ul>
+    <div class="fame-card">
+      <img src="https://via.placeholder.com/200x200.png?text=Photo1" alt="Photo 1" />
+      <div class="rank">Медийка</div>
+      <div class="username">@username1</div>
     </div>
+    <div class="fame-card">
+      <img src="https://via.placeholder.com/200x200.png?text=Photo2" alt="Photo 2" />
+      <div class="rank">Медийка</div>
+      <div class="username">@username2</div>
+    </div>
+    <div class="fame-card">
+      <img src="https://via.placeholder.com/200x200.png?text=Photo3" alt="Photo 3" />
+      <div class="rank">Медийка</div>
+      <div class="username">@username3</div>
+    </div>
+    <!-- Добавляй столько блоков, сколько нужно -->
   </main>
 
 </body>
 </html>
-      
