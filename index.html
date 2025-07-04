@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>BlackHub</title>
   <style>
     body {
@@ -21,28 +21,23 @@
       border-bottom: 1px solid crimson;
       z-index: 1000;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      position: fixed;
     }
-    .header-inner {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
+    .menu-icon {
+      position: absolute;
+      left: 20px;
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
     }
     header h1 {
       margin: 0;
       font-size: 28px;
       color: crimson;
-      text-align: center;
-    }
-    .menu-icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 26px;
-      color: white;
-      cursor: pointer;
-      padding: 10px 15px;
+      letter-spacing: 2px;
     }
     .sidebar {
       position: fixed;
@@ -110,10 +105,8 @@
   </div>
 
   <header>
-    <div class="header-inner">
-      <h1>BlackHub</h1>
-      <div class="menu-icon" onclick="toggleSidebar()">☰</div>
-    </div>
+    <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+    <h1>BlackHub</h1>
   </header>
 
   <div class="content">
