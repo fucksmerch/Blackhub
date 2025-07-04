@@ -17,16 +17,55 @@
       left: 0;
       width: 100%;
       background-color: #000;
-      padding: 20px 0;
-      text-align: center;
+      padding: 20px;
       border-bottom: 1px solid crimson;
       z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-inner {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
     }
     header h1 {
       margin: 0;
       font-size: 28px;
       color: crimson;
-      letter-spacing: 2px;
+      text-align: center;
+    }
+    .menu-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 60px 20px;
+      box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+      transition: left 0.3s ease-in-out;
+      z-index: 999;
+    }
+    .sidebar a {
+      display: block;
+      margin: 20px 0;
+      color: crimson;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .sidebar.open {
+      left: 0;
     }
     .content {
       padding-top: 100px;
@@ -63,8 +102,18 @@
 </head>
 <body>
 
+  <div class="sidebar" id="sidebar">
+    <a href="#">📃 Фейм Лист</a>
+    <a href="#">📚 История КМ</a>
+    <a href="#">💪 Самый сильный фейм</a>
+    <a href="#">💬 Форум</a>
+  </div>
+
   <header>
-    <h1>BlackHub</h1>
+    <div class="header-inner">
+      <h1>BlackHub</h1>
+      <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+    </div>
   </header>
 
   <div class="content">
@@ -79,6 +128,13 @@
   <div class="description">
     Кровь на никнеймах — правда в одном клике. Здесь ты найдёшь аккаунты медийных личностей, факты, слитую инфу и компромат. 🔥 Форум — для тех, кто не боится говорить открыто. 🕵️ Делись, общайся, раскрывай.
   </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
