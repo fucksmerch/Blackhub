@@ -1,125 +1,109 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <title>FAME LIST</title>
-  <style>
-    body {
-      background-color: #000;
-      color: crimson;
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Шапка */
-    header {
-      width: 100%;
-      padding: 20px 0;
-      border-bottom: 1px solid crimson;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      background-color: #000;
-      color: crimson;
-      font-size: 28px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      z-index: 1000;
-    }
-
-    /* Иконка меню слева */
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 26px;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-      z-index: 1001;
-    }
-
-    /* Боковое меню */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      padding: 60px 20px;
-      box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
-      transition: left 0.3s ease-in-out;
-      z-index: 999;
-    }
-    .sidebar a {
-      display: block;
-      margin: 20px 0;
-      color: crimson;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .sidebar.open {
-      left: 0;
-    }
-
-    /* Контент */
-    main {
-      margin-top: 90px;
-      max-width: 840px; /* 3 карточки по 260 + 2 отступа по 30 */
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      box-sizing: border-box;
-    }
-
-    .fame-card {
-      width: 260px;
-      background-color: #111;
-      border: 1px solid crimson;
-      border-radius: 10px;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 15px crimson;
-    }
-    .rank {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 6px;
-      color: crimson;
-    }
-    .username {
-      font-size: 14px;
-      color: #fff;
-      word-break: break-word;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Меню -->
+<main>
   <div class="sidebar" id="sidebar">
     <a href="index.html">🏠 Сайт</a>
     <a href="#">📚 История КМ</a>
     <a href="#">💪 Самый сильный фейм</a>
     <a href="#">💬 Форум</a>
   </div>
-
-  <!-- Кнопка ☰ -->
   <div class="menu-icon" onclick="toggleSidebar()">☰</div>
-
-  <!-- Заголовок -->
   <header>FAME LIST</header>
 
-  <!-- Контент -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: crimson;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid crimson;
+      background: #000;
+      z-index: 1000;
+    }
+    .menu-icon {
+      position: fixed;
+      top: 25px;
+      left: 20px;
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      padding: 60px 20px;
+      transition: left 0.3s;
+      z-index: 999;
+    }
+    .sidebar.open { left: 0; }
+    .sidebar a {
+      color: crimson;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin: 20px 0;
+    }
+    main {
+      margin: 90px auto 40px;
+      max-width: 840px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .fame-card {
+      flex: 0 0 calc(33.333% - 13.333px);
+      background: #111;
+      border: 1px solid crimson;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 10px crimson;
+    }
+    .fame-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .fame-card .rank {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: crimson;
+    }
+    .fame-card .username {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #fff;
+      padding: 0 10px;
+      word-break: break-word;
+    }
+    @media (max-width: 768px) {
+      .fame-card {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+    @media (max-width: 480px) {
+      .fame-card {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
+
   <main>
     <div class="fame-card">
       <img src="https://i.postimg.cc/bvYdrr73/IMG-20250704-094750-712.jpg" alt="Photo 1" />
@@ -136,16 +120,13 @@
       <div class="rank">femboy лордик</div>
       <div class="username">@attacklordik</div>
     </div>
-    <!-- Добавь больше карточек, если нужно -->
+    <!-- добавляй сюда еще .fame-card -->
   </main>
 
-  <!-- JS: открытие/закрытие меню -->
   <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open');
+    function toggleSidebar(){
+      document.getElementById('sidebar').classList.toggle('open');
     }
   </script>
-
 </body>
-</html>
+  
