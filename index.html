@@ -40,27 +40,22 @@
       letter-spacing: 2px;
     }
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      padding: 60px 20px;
-      box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
-      transition: left 0.3s ease-in-out;
-      z-index: 999;
-    }
     .sidebar a {
-      display: block;
-      margin: 20px 0;
-      color: crimson;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .sidebar.open {
-      left: 0;
+  display: block;
+  background: crimson;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px;
+  margin-bottom: 15px; /* расстояние между кнопками */
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.3s;
+}
+    .sidebar.open { left: 0; }
+    .sidebar a:hover {
+  background: darkred;
     }
     .content {
       padding-top: 100px;
