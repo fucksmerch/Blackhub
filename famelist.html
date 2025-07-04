@@ -14,6 +14,8 @@
       flex-direction: column;
       align-items: center;
     }
+
+    /* Шапка */
     header {
       width: 100%;
       padding: 20px 0;
@@ -28,6 +30,45 @@
       letter-spacing: 2px;
       z-index: 1000;
     }
+
+    /* Иконка меню слева */
+    .menu-icon {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1001;
+    }
+
+    /* Боковое меню */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 60px 20px;
+      box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+      transition: left 0.3s ease-in-out;
+      z-index: 999;
+    }
+    .sidebar a {
+      display: block;
+      margin: 20px 0;
+      color: crimson;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .sidebar.open {
+      left: 0;
+    }
+
+    /* Контент */
     main {
       margin-top: 90px;
       max-width: 900px;
@@ -38,11 +79,12 @@
       justify-content: space-between;
       gap: 20px;
     }
+
     .fame-card {
+      width: 260px;
       background-color: #111;
       border: 1px solid crimson;
       border-radius: 10px;
-      width: 200px;
       text-align: center;
       padding: 15px;
       box-shadow: 0 0 15px crimson;
@@ -69,8 +111,21 @@
 </head>
 <body>
 
+  <!-- Меню -->
+  <div class="sidebar" id="sidebar">
+    <a href="index.html">🏠 Сайт</a>
+    <a href="#">📚 История КМ</a>
+    <a href="#">💪 Самый сильный фейм</a>
+    <a href="#">💬 Форум</a>
+  </div>
+
+  <!-- Кнопка ☰ -->
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+
+  <!-- Заголовок -->
   <header>FAME LIST</header>
 
+  <!-- Контент -->
   <main>
     <div class="fame-card">
       <img src="https://i.postimg.cc/bvYdrr73/IMG-20250704-094750-712.jpg" alt="Photo 1" />
@@ -87,8 +142,16 @@
       <div class="rank">femboy лордик</div>
       <div class="username">@attacklordik</div>
     </div>
-    <!-- Добавляй столько блоков, сколько нужно -->
+    <!-- Добавь больше карточек, если нужно -->
   </main>
+
+  <!-- JS: открытие/закрытие меню -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
